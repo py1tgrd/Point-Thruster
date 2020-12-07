@@ -1,0 +1,68 @@
+
+
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box !important;
+    --triangle-size:150px;
+    --triangle-color:#22B82E;
+    --triangle-size-margin:15px;
+}
+
+
+.container{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overscroll-behavior: none;
+}
+
+
+.triangle{
+    
+    width: 0; 
+    height: 0; 
+    border-left: var(--triangle-size) solid transparent;
+    border-right: var(--triangle-size) solid transparent;
+    border-bottom: calc(2*var(--triangle-size)*0.866) solid var(--triangle-color);
+    
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.triangle.activated{
+    filter:brightness(125%);
+    filter: drop-shadow(0px 0px 30px var(--triangle-color));
+
+}
+
+.container.activated{
+    background-color: #98EC9F;
+    
+}
+
+
+.triangle:nth-child(1){
+    top: calc(50% - var(--triangle-size) - var(--triangle-size-margin));
+    
+}
+
+.triangle:nth-child(2){
+    top: calc(50% + var(--triangle-size) + var(--triangle-size-margin));
+    left: calc(50% - var(--triangle-size) - 2 * var(--triangle-size-margin));
+    
+}
+
+.triangle:nth-child(3){
+    top: calc(50% + var(--triangle-size) + var(--triangle-size-margin) );
+    left: calc(50% + var(--triangle-size) + 2 * var(--triangle-size-margin));
+    
+}
+
+.triangle:nth-child(4){
+    
+    transform:rotate(180deg) translateX(50%);
+}
