@@ -10,6 +10,11 @@
 }
 
 
+@media only screen and (max-width: 500px) {
+    * {--triangle-size:50px;}
+  }
+
+
 .container{
     position: relative;
     width: 100vw;
