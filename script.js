@@ -1,12 +1,19 @@
 
 
+let running = true;
+
 const _C = document.querySelector('.container');
 
 
 const togglePointThuster = (e) =>{
-    e.preventDefault();
-    document.querySelectorAll(".triangle").forEach((t)=>t.classList.toggle("activated"));
-    _C.classList.toggle("activated");
+    if(running){
+        e.preventDefault();
+        document.querySelectorAll(".triangle").forEach((t)=>t.classList.toggle("activated"));
+        _C.classList.toggle("activated");
+        navigator.vibrate(300)
+        running=false
+        setTimeout(()=>running=true,400);
+    }
 }
 
 
