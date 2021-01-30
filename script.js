@@ -10,8 +10,8 @@ const togglePointThuster = (e) =>{
         e.preventDefault();
         document.querySelectorAll(".triangle").forEach((t)=>t.classList.toggle("activated"));
         _C.classList.toggle("activated");
-        navigator.vibrate(300)
-        running=false
+        window.navigator.vibrate(300);
+        running=false;
         setTimeout(()=>running=true,400);
     }
 }
